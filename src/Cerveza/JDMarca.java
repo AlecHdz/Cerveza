@@ -160,7 +160,8 @@ public class JDMarca extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "No se pudo guardar los datos");
         }
         
-         
+       
+        
         Menu ventana = new Menu();
         ventana.setVisible(true);
         this.dispose();

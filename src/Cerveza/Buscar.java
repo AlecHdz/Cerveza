@@ -71,6 +71,11 @@ public class Buscar extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(248, 200, 119));
         jButton2.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         jButton2.setText("Cancelar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setBackground(new java.awt.Color(248, 200, 119));
         jButton3.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
@@ -161,6 +166,14 @@ public class Buscar extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        Menu ventana = new Menu();
+        ventana.setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
