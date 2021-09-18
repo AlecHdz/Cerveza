@@ -132,6 +132,43 @@ public class Metodos_sql {
        return resultado;
     }
     
+     public int guardarCer (String idexpendio,String idmarca, String nombre,
+       String presentacion, String graduacion, String tipo, String aspecto,
+       String procedimientos){
+    
+       int resultado =0;
+       Connection conexion = null;
+       
+       String sentencia_guardar = ("INSERT INTO cerveza "
+                + "(idcerveza,idmarca,nombre,presentacion,graduacion,tipo,aspecto,procedimientos,cer_expendio) "
+                + "VALUES (?,?,?,?,?,?,?,?,0)");
+       
+       try{
+           conexion =ConexionBD.conectar();
+           sentencia_preparada = conexion.prepareStatement(sentencia_guardar);
+           sentencia_preparada.setString(1,idexpendio);
+           sentencia_preparada.setString(2,idmarca);
+           sentencia_preparada.setString(3,nombre);
+           sentencia_preparada.setString(4,presentacion);
+           sentencia_preparada.setString(5,graduacion);
+           sentencia_preparada.setString(6,tipo);
+           sentencia_preparada.setString(7,aspecto);
+           sentencia_preparada.setString(8,procedimientos);
+           
+           resultado = sentencia_preparada.executeUpdate();
+           sentencia_preparada.close();
+           
+       }catch(Exception e){
+       
+           System.out.println(e);
+       }
+       return resultado;
+    }
+    
+     
+     
+     
+     // Consulta SQL
      public ResultSet consultarAlgo(String consul) {
       int resultado =0;
       Connection conexion = null;
