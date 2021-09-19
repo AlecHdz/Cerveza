@@ -189,6 +189,7 @@ public class JDPro2 extends javax.swing.JDialog {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -196,7 +197,7 @@ public class JDPro2 extends javax.swing.JDialog {
         
         int i= metodos.guardarPro(jLabel6.getText(),jLabel8.getText(), jLabel9.getText(),jLabel7.getText());
         if (i > 0) {
-            JOptionPane.showMessageDialog(this, "Se ha creado una Marca correctamente");
+            JOptionPane.showMessageDialog(this, "Se ha creado una Produccion correctamente");
         } else {
             JOptionPane.showMessageDialog(this, "No se pudo guardar los datos");
         }

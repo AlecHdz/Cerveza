@@ -269,7 +269,6 @@ public class JDPro extends javax.swing.JDialog {
     private void jTextField3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField3MouseClicked
         // TODO add your handling code here:
         jTextField3.setText("");
-      
     }//GEN-LAST:event_jTextField3MouseClicked
 
     /**
