@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+
 /**
  *
  * @author ph
@@ -23,6 +24,8 @@ public class Metodos_sql {
     public static int resultado_numero = 0;
         String resultado_consulta;
     ResultSet rs = null;
+    Timestamp ts;
+    
     
     public int guardarExp (String nombre,String rfc,
            String responsable,String estado, String municipio, String ubicacion ){
@@ -165,6 +168,33 @@ public class Metodos_sql {
        return resultado;
     }
     
+          public int guardarPro (String idproduccion, String cantidad,
+       String fecha, String idcerveza){
+    
+       int resultado =0;
+       Connection conexion = null;
+       
+       String sentencia_guardar = ("INSERT INTO produccion "
+                + "(idproduccion,cantidad,fecha, idcerveza) "
+                + "VALUES (?,?,?,?)");
+       
+       try{
+           conexion =ConexionBD.conectar();
+           sentencia_preparada = conexion.prepareStatement(sentencia_guardar);
+           sentencia_preparada.setString(1,idproduccion);
+           sentencia_preparada.setString(2,cantidad);
+           sentencia_preparada.setString(3,fecha);
+           sentencia_preparada.setString(4,idcerveza);
+           
+           resultado = sentencia_preparada.executeUpdate();
+           sentencia_preparada.close();
+           
+       }catch(Exception e){
+       
+           System.out.println(e);
+       }
+       return resultado;
+    }
      
      
      
