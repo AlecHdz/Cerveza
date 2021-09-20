@@ -24,7 +24,7 @@ public class Metodos_sql {
     public static int resultado_numero = 0;
         String resultado_consulta;
     ResultSet rs = null;
-    Timestamp ts;
+    
     
     
     public int guardarExp (String nombre,String rfc,
@@ -196,6 +196,39 @@ public class Metodos_sql {
        return resultado;
     }
      
+          
+       public int guardarVenta (String idventa, String cantidad,
+       String fecha, String precioUni,String idexpendio,String idcerveza){
+           
+          
+       int resultado =0;
+       Connection conexion = null;
+        
+       
+       String sentencia_guardar = ("INSERT INTO venta "
+                + "(idventa,cantidad,fecha, precioUni,idexpendio,idcerveza  ) "
+                + "VALUES (?,?,?,?,?,?)");
+       
+       try{
+           conexion =ConexionBD.conectar();
+           sentencia_preparada = conexion.prepareStatement(sentencia_guardar);
+           sentencia_preparada.setString(1,idventa);
+           sentencia_preparada.setString(2,cantidad);
+           sentencia_preparada.setString(3,fecha);
+           sentencia_preparada.setString(4,precioUni);
+           sentencia_preparada.setString(5,idexpendio);
+           sentencia_preparada.setString(6,idcerveza);
+           
+           resultado = sentencia_preparada.executeUpdate();
+           sentencia_preparada.close();
+           
+       }catch(Exception e){
+       
+           System.out.println(e);
+       }
+       return resultado;
+    }     
+          
      
      
      // Consulta SQL

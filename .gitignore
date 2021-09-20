@@ -5,3 +5,6 @@ src/Cerveza/JDCer2.java
 src/Cerveza/JDFab.form
 *.java
 !/src/Cerveza/Venta.java
+!/src/Cerveza/JDVenta.java
+!/src/Cerveza/JDVenta2.java
+!/src/Cerveza/RStoTM.java
