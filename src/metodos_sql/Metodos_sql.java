@@ -131,6 +131,32 @@ public class Metodos_sql {
        }
        return resultado;
     }
+     
+      public int guardarInv (String cant,
+           String idExp, String idCerv ){
+    
+       int resultado =0;
+       Connection conexion = null;
+       
+       String sentencia_guardar = ("INSERT INTO inventario ( cantidad,"
+               + "idcerveza, idexpendio) VALUES(?,?,?)");
+       
+       try{
+           conexion =ConexionBD.conectar();
+           sentencia_preparada = conexion.prepareStatement(sentencia_guardar);
+           sentencia_preparada.setString(1,cant);
+           sentencia_preparada.setString(2,idCerv);
+           sentencia_preparada.setString(2,idExp);
+           
+           resultado = sentencia_preparada.executeUpdate();
+           sentencia_preparada.close();
+           
+       }catch(Exception e){
+       
+           System.out.println(e);
+       }
+       return resultado;
+    }
     
      public ResultSet consultarAlgo(String consul) {
       int resultado =0;

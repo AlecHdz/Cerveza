@@ -8,7 +8,8 @@ package Cerveza;
 
 public class Expendio {
 
-        private String nomExp = "";
+    private int idExp;
+    private String nomExp = "";
     private String rfc = "";
     private String respExp = "";
     private String estadoExp = "";
@@ -16,7 +17,8 @@ public class Expendio {
     private String ubicExp = "";
 
 
-    public void SetExpendio(String cnom, String crfc, String cresp, String cestado, String cmun,String cubic){
+    public void SetExpendio(String cid, String cnom, String crfc, String cresp, String cestado, String cmun,String cubic){
+        setIdExp(Integer.parseInt(cid));
         setNomExp(cnom);
         setRfc(crfc);
         setRespExp(cresp);
@@ -28,12 +30,22 @@ public class Expendio {
     
     public void DespExpendio(){
         System.out.println("Objeto Expendio");
+        System.out.println("Id Expendio: " + getIdExp());
         System.out.println("Nombre del Expendio: " + getNomExp());
         System.out.println("RFC: " + getRfc());
+        System.out.println("Responsable: " + getRespExp());
         System.out.println("Estado: " + getEstadoExp());
         System.out.println("Municipio: " + getMunExp());
         System.out.println("Direccion: " + getUbicExp());
         
+    }
+
+    public int getIdExp() {
+        return idExp;
+    }
+
+    public void setIdExp(int idExp) {
+        this.idExp = idExp;
     }
      
     

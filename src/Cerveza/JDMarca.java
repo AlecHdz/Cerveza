@@ -27,6 +27,7 @@ public class JDMarca extends javax.swing.JFrame {
        
        public String nomMarc;
        public String idFab;
+       
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -64,6 +65,11 @@ public class JDMarca extends javax.swing.JFrame {
         jLabel3.setText("IdFabricante:");
 
         jComboBox_idFab.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        jComboBox_idFab.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox_idFabActionPerformed(evt);
+            }
+        });
 
         txt_nomMar.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
 
@@ -167,6 +173,10 @@ public class JDMarca extends javax.swing.JFrame {
         this.dispose();
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jComboBox_idFabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox_idFabActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox_idFabActionPerformed
 
     public void agregaFab(){
         String sentenc;
