@@ -168,7 +168,7 @@ public class Metodos_sql {
        return resultado;
     }
     
-          public int guardarPro (String idproduccion, String cantidad,
+        public int guardarPro (String idproduccion, String cantidad,
        String fecha, String idcerveza){
     
        int resultado =0;
@@ -228,6 +228,71 @@ public class Metodos_sql {
        }
        return resultado;
     }     
+       
+       
+    public int guardarReceta (String idreceta, String cantidad,
+       String idcerveza, String idingrediente){
+    
+       int resultado =0;
+       Connection conexion = null;
+       
+       String sentencia_guardar = ("INSERT INTO receta "
+                + "(idreceta,cantidad,idcerveza, idingrediente) "
+                + "VALUES (?,?,?,?)");
+       
+       try{
+           conexion =ConexionBD.conectar();
+           sentencia_preparada = conexion.prepareStatement(sentencia_guardar);
+           sentencia_preparada.setString(1,idreceta);
+           sentencia_preparada.setString(2,cantidad);
+           sentencia_preparada.setString(3,idcerveza);
+           sentencia_preparada.setString(4,idingrediente);
+           
+           resultado = sentencia_preparada.executeUpdate();
+           sentencia_preparada.close();
+           
+       }catch(Exception e){
+       
+           System.out.println(e);
+       }
+       return resultado;
+    }
+    
+    
+     public int guardarPedido(String idpedido, String cantidad,
+       String fechapedido, String fechaentrega, String preciouni,
+       String idexpendio, String idfabricante, String idcerveza){
+    
+       int resultado =0;
+       Connection conexion = null;
+       
+       String sentencia_guardar = ("INSERT INTO pedido "
+                + "(idpedido,cantidad,fechapedido, fechaentrega,preciouni,"
+               + " idexpendio,idfabricante, idcerveza ) "
+                + "VALUES (?,?,?,?,?,?,?,?)");
+       
+       try{
+           conexion =ConexionBD.conectar();
+           sentencia_preparada = conexion.prepareStatement(sentencia_guardar);
+           sentencia_preparada.setString(1,idpedido);
+           sentencia_preparada.setString(2,cantidad);
+           sentencia_preparada.setString(3,fechapedido);
+           sentencia_preparada.setString(4,fechaentrega);
+           sentencia_preparada.setString(5,preciouni);
+           sentencia_preparada.setString(6,idexpendio);
+           sentencia_preparada.setString(7,idfabricante);
+           sentencia_preparada.setString(8,idcerveza);
+           
+           resultado = sentencia_preparada.executeUpdate();
+           sentencia_preparada.close();
+           
+       }catch(Exception e){
+       
+           System.out.println(e);
+       }
+       return resultado;
+    }
+    
           
      
      

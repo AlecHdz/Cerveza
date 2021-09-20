@@ -54,7 +54,7 @@ public class JDPro2 extends javax.swing.JDialog {
         jPanel1.setBackground(new java.awt.Color(172, 163, 224));
 
         jLabel1.setFont(new java.awt.Font("Rockwell", 1, 36)); // NOI18N
-        jLabel1.setText("Fabricante");
+        jLabel1.setText("Identificación");
 
         jPanel2.setBackground(new java.awt.Color(248, 200, 119));
 
@@ -139,10 +139,6 @@ public class JDPro2 extends javax.swing.JDialog {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(130, 130, 130))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(48, 48, 48)
@@ -155,6 +151,10 @@ public class JDPro2 extends javax.swing.JDialog {
                         .addGap(58, 58, 58)
                         .addComponent(jButton3)))
                 .addContainerGap(41, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(106, 106, 106))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
