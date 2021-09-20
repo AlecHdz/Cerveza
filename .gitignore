@@ -1,2 +1,7 @@
 /nbproject/private/
 /build/
+src/Cerveza/JDCer2.java
+src/Cerveza/JDCer2.java
+src/Cerveza/JDFab.form
+*.java
+!/src/Cerveza/Venta.java
